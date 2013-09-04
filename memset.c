@@ -34,7 +34,7 @@
 #include <string.h>
 
 void *
-memset(void *dst, int c, size_t n)
+memset1(void *dst, int c, size_t n)
 {
 	if (n != 0) {
 		unsigned char *d = dst;

@@ -11,7 +11,7 @@ __FBSDID("$FreeBSD$");
 	RCSID("$NetBSD: memset.S,v 1.3 2004/02/26 20:50:06 drochner Exp $")
 #endif
 
-ENTRY(memset)
+ENTRY(memset1)
 	movq	%rsi,%rax
 	andq	$0xff,%rax
 	movq	%rdx,%rcx
