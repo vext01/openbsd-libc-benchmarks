@@ -10,7 +10,6 @@
 
 #include "memset1.h"
 
-#define HOWLONG		5
 #define SETCHAR		'x'
 #define WARMUP_ITERS	65536
 
@@ -26,14 +25,16 @@ int
 main(int argc, char **argv)
 {
 	char			*buf;
-	unsigned long long	n_bufs = 0, bufsz, i, j;
+	unsigned long long	n_bufs = 0, bufsz, i, j, seconds;
 
-	if (argc != 2) {
-		printf("usage: bench-[sc] <bufsz>\n");
+	if (argc != 3) {
+		printf("usage: bench-[sc] <bufsz> <seconds>\n");
 		exit(EXIT_FAILURE);
 	}
 
 	bufsz = atoi(argv[1]);
+	seconds = atoi(argv[2]);
+
 	if ((buf = malloc(bufsz)) == NULL)
 		err(EXIT_FAILURE, "malloc");
 
@@ -59,7 +60,7 @@ main(int argc, char **argv)
 	if (signal(SIGALRM, sig_hndl) == SIG_ERR)
 		err(EXIT_FAILURE, "signal");
 
-	if (alarm(HOWLONG) < 0)
+	if (alarm(seconds) < 0)
 		err(EXIT_FAILURE, "alarm");
 
 	while (again) {
