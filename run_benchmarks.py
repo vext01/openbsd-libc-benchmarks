@@ -1,20 +1,21 @@
 #!/usr/bin/env python2.7
 
 # Remember to run with `apm -H` and with no malloc.conf
+# and with power plugged in.
 
 import subprocess, sys
 import matplotlib.pyplot as plt
 
 # Real params
-#REPS = 10
-#HOWLONG = 60 # in seconds
+REPS = 5
+HOWLONG = 60 # in seconds
 
 # test params
-REPS = 2
-HOWLONG = 1 # in seconds
+#REPS = 1
+#HOWLONG = 1 # in seconds
 
 # carefully selected to not all be powers of two, although roughly doubling
-buf_sizes = [4200, 8455, 16901, 33888, 67779]
+buf_sizes = [4200, 8455, 16901, 33888, 67779, 135551]
 
 avgs_s = ([], []) # (list of X coords, list of Y coords)
 avgs_c = ([], []) # "
@@ -46,10 +47,28 @@ print(avgs_s)
 print("C:")
 print(avgs_c)
 
-# plot
+# sanity preserved?
+assert len(avgs_s[0]) == len(avgs_c[0]) == len(avgs_s[1]) == len(avgs_c[1]) == len(buf_sizes)
+
+# GRAPH 1:
+# plot raw averages
 plt.plot(avgs_s[0], avgs_s[1], label='Assembler')
 plt.plot(avgs_c[0], avgs_c[1], label='C')
 plt.xlabel('buffer size')
-plt.ylabel('# of buffers copied in %s seconds' % (HOWLONG,))
+plt.ylabel('Num of buffers copied in %s seconds' % (HOWLONG,))
 plt.legend()
+plt.show()
+plt.clf()
+plt.close()
+
+# GRAPH 2:
+# plot ratio of bufs processed. asm vs. C
+y = []
+for i in range(len(buf_sizes)):
+    y.append(avgs_s[1][i] / avgs_c[1][i])
+
+plt.plot(buf_sizes, y)
+plt.title('Comparison of num bufs processed in %s seconds' % HOWLONG)
+plt.xlabel('buffer size')
+plt.ylabel('Ratio of buffers processed, asm to C (>1 means asm faster)')
 plt.show()
