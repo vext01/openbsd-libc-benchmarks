@@ -90,6 +90,7 @@ assert len(avgs_s[0]) == len(avgs_c[0]) == len(avgs_s[1]) == len(avgs_c[1]) == l
 # plot raw averages
 plt.plot(avgs_s[0], avgs_s[1], label='Assembler')
 plt.plot(avgs_c[0], avgs_c[1], label='C')
+plt.title("Number of buffers set in %s seconds" % (HOWLONG))
 plt.xlabel('Buffer size')
 plt.ylabel('Mean (of %s samples) num of buffers set in %s seconds' % (REPS, HOWLONG,))
 plt.legend()
@@ -104,9 +105,9 @@ for i in range(len(buf_sizes)):
     y.append(avgs_s[1][i] / avgs_c[1][i])
 
 plt.plot(buf_sizes, y)
-plt.title('Comparison of num bufs processed in %s seconds' % HOWLONG)
+plt.title('Comparison of num bufs processed by Asm and C in %s seconds' % HOWLONG)
 plt.xlabel('Buffer size')
-plt.ylabel('Mean (of %s samples) ratio of buffers processed' % (REPS, ))
+plt.ylabel('Mean (of %s samples) ratio of buffers processed\nAsm vs. C. Ratio of >1 means asm was faster' % (REPS, ))
 plt.savefig(os.path.join(OUTDIR, "ratio.png"))
 
 print("Results in the '%s' directory" % OUTDIR)
