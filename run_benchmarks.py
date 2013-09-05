@@ -78,7 +78,7 @@ for bs in buf_sizes: # loop the buffer sizes
         raw_file.write("# asm=%s, bufsz=%d:\n" % (asm, bs))
         raw_file.write(str(raw_data) + "\n")
 
-        avgs[0].append(bs)
+        avgs[0].append(bs/1024.0) # kilobytes
         avgs[1].append(sum(raw_data) / float(REPS)) # mean no. of bufs processed
 
 raw_file.close()
@@ -91,7 +91,7 @@ assert len(avgs_s[0]) == len(avgs_c[0]) == len(avgs_s[1]) == len(avgs_c[1]) == l
 plt.plot(avgs_s[0], avgs_s[1], label='Assembler')
 plt.plot(avgs_c[0], avgs_c[1], label='C')
 plt.title("Number of buffers set in %s seconds" % (HOWLONG))
-plt.xlabel('Buffer size')
+plt.xlabel('Buffer size (KB)')
 plt.ylabel('Mean (of %s samples) num of buffers set in %s seconds' % (REPS, HOWLONG,))
 plt.legend()
 plt.savefig(os.path.join(OUTDIR, "num_set.png"))
@@ -104,9 +104,10 @@ y = []
 for i in range(len(buf_sizes)):
     y.append(avgs_s[1][i] / avgs_c[1][i])
 
-plt.plot(buf_sizes, y)
+buf_sizes_kb = [ x / 1024.0 for x in buf_sizes ]
+plt.plot(buf_sizes_kb, y)
 plt.title('Comparison of num bufs processed by Asm and C in %s seconds' % HOWLONG)
-plt.xlabel('Buffer size')
+plt.xlabel('Buffer size (KB)')
 plt.ylabel('Mean (of %s samples) ratio of buffers processed\nAsm vs. C. Ratio of >1 means asm was faster' % (REPS, ))
 plt.savefig(os.path.join(OUTDIR, "ratio.png"))
 
