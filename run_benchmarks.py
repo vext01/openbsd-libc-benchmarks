@@ -30,8 +30,8 @@ raw_input()
 REPS = 1
 HOWLONG = 1 # in seconds
 
-# carefully selected to not all be powers of two, although roughly doubling
-buf_sizes = [4200, 8455, 16901, 33888, 67779, 135551]
+# no powers of two, to exercise alignment
+buf_sizes = [4200, 6223, 8455, 12380, 16901, 25025, 33888, 49887, 67779, 101668, 135551]
 
 avgs_s = ([], []) # (list of X coords, list of Y coords)
 avgs_c = ([], []) # "
