@@ -32,6 +32,14 @@ raw_file.write("# buffer sizes: %s\n" % (buf_sizes,))
 raw_file.write("# sample size: %s\n" % (REPS,))
 raw_file.write("# how long: %s\n\n" % (HOWLONG,))
 
+# collect dmesg
+print("Collecting dmesg...")
+pipe = subprocess.Popen("/sbin/dmesg", stdout=subprocess.PIPE)
+(stdout, stderr) = pipe.communicate()
+with open("%s/dmesg" % OUTDIR, "w") as fh:
+    fh.write(stdout)
+
+# Experiments begin
 for bs in buf_sizes: # loop the buffer sizes
 
     for asm in [True, False]: # which implementation to use
@@ -53,7 +61,6 @@ for bs in buf_sizes: # loop the buffer sizes
         raw_file.write("# asm=%s, bufsz=%d, howlong=%d:\n" % (asm, bs, HOWLONG))
         raw_file.write(str(raw_data) + "\n")
 
-        print("raw data for bufsz=%d: %s" % (bs, raw_data))
         avgs[0].append(bs)
         avgs[1].append(sum(raw_data) / float(REPS)) # mean no. of bufs processed
 
@@ -84,11 +91,5 @@ plt.title('Comparison of num bufs processed in %s seconds' % HOWLONG)
 plt.xlabel('buffer size')
 plt.ylabel('Mean (of %s samples) ratio of buffers processed' % (REPS, ))
 plt.savefig("%s/ratio.png" % OUTDIR)
-
-# collect dmesg
-pipe = subprocess.Popen("/sbin/dmesg", stdout=subprocess.PIPE)
-(stdout, stderr) = pipe.communicate()
-with open("%s/dmesg" % OUTDIR, "w") as fh:
-    fh.write(stdout)
 
 print("Results in the 'out' directory")
