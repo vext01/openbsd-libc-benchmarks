@@ -23,12 +23,12 @@ print("Hit enter to run tests...")
 raw_input()
 
 # Real params
-#REPS = 5
-#HOWLONG = 60 # in seconds
+REPS = 5
+HOWLONG = 60 # in seconds
 
 # test params
-REPS = 1
-HOWLONG = 1 # in seconds
+#REPS = 1
+#HOWLONG = 1 # in seconds
 
 # no powers of two, to exercise alignment
 buf_sizes = [4200, 6223, 8455, 12380, 16901, 25025, 33888, 49887, 67779, 101668, 135551]
