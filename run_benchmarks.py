@@ -3,6 +3,8 @@
 import subprocess, sys, os
 import matplotlib.pyplot as plt
 
+plt.rcParams['figure.autolayout'] = True
+
 if len(sys.argv) != 2:
     print("usage: run_benchmarks.py <dataset_name>")
     print("e.g.: run_benchmarks.py edds_laptop")
@@ -88,7 +90,7 @@ assert len(avgs_s[0]) == len(avgs_c[0]) == len(avgs_s[1]) == len(avgs_c[1]) == l
 # plot raw averages
 plt.plot(avgs_s[0], avgs_s[1], label='Assembler')
 plt.plot(avgs_c[0], avgs_c[1], label='C')
-plt.xlabel('buffer size')
+plt.xlabel('Buffer size')
 plt.ylabel('Mean (of %s samples) num of buffers set in %s seconds' % (REPS, HOWLONG,))
 plt.legend()
 plt.savefig(os.path.join(OUTDIR, "num_set.png"))
@@ -103,7 +105,7 @@ for i in range(len(buf_sizes)):
 
 plt.plot(buf_sizes, y)
 plt.title('Comparison of num bufs processed in %s seconds' % HOWLONG)
-plt.xlabel('buffer size')
+plt.xlabel('Buffer size')
 plt.ylabel('Mean (of %s samples) ratio of buffers processed' % (REPS, ))
 plt.savefig(os.path.join(OUTDIR, "ratio.png"))
 
