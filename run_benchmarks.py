@@ -3,22 +3,34 @@
 # Remember to run with `apm -H` and with no malloc.conf
 # and with power plugged in.
 
-import subprocess, sys
+import subprocess, sys, os
 import matplotlib.pyplot as plt
 
 # Real params
-REPS = 5
-HOWLONG = 60 # in seconds
+#REPS = 5
+#HOWLONG = 60 # in seconds
 
 # test params
-#REPS = 1
-#HOWLONG = 1 # in seconds
+REPS = 1
+HOWLONG = 1 # in seconds
 
 # carefully selected to not all be powers of two, although roughly doubling
 buf_sizes = [4200, 8455, 16901, 33888, 67779, 135551]
 
 avgs_s = ([], []) # (list of X coords, list of Y coords)
 avgs_c = ([], []) # "
+
+OUTDIR = "out"
+try:
+    os.mkdir(OUTDIR)
+except:
+    print("error: cannot create dir: %s" % (OUTDIR, ))
+    sys.exit(1)
+
+raw_file = open("%s/raw.out" % OUTDIR, "w")
+raw_file.write("# buffer sizes: %s\n" % (buf_sizes,))
+raw_file.write("# sample size: %s\n" % (REPS,))
+raw_file.write("# how long: %s\n\n" % (HOWLONG,))
 
 for bs in buf_sizes: # loop the buffer sizes
 
@@ -38,14 +50,14 @@ for bs in buf_sizes: # loop the buffer sizes
 
             raw_data.append(float(stdout))
 
+        raw_file.write("# asm=%s, bufsz=%d, howlong=%d:\n" % (asm, bs, HOWLONG))
+        raw_file.write(str(raw_data) + "\n")
+
         print("raw data for bufsz=%d: %s" % (bs, raw_data))
         avgs[0].append(bs)
         avgs[1].append(sum(raw_data) / float(REPS)) # mean no. of bufs processed
 
-print("Asm:")
-print(avgs_s)
-print("C:")
-print(avgs_c)
+raw_file.close()
 
 # sanity preserved?
 assert len(avgs_s[0]) == len(avgs_c[0]) == len(avgs_s[1]) == len(avgs_c[1]) == len(buf_sizes)
@@ -57,7 +69,7 @@ plt.plot(avgs_c[0], avgs_c[1], label='C')
 plt.xlabel('buffer size')
 plt.ylabel('Mean (of %s samples) num of buffers set in %s seconds' % (REPS, HOWLONG,))
 plt.legend()
-plt.show()
+plt.savefig("%s/num_set.png" % OUTDIR)
 plt.clf()
 plt.close()
 
@@ -71,4 +83,12 @@ plt.plot(buf_sizes, y)
 plt.title('Comparison of num bufs processed in %s seconds' % HOWLONG)
 plt.xlabel('buffer size')
 plt.ylabel('Mean (of %s samples) ratio of buffers processed' % (REPS, ))
-plt.show()
+plt.savefig("%s/ratio.png" % OUTDIR)
+
+# collect dmesg
+pipe = subprocess.Popen("/sbin/dmesg", stdout=subprocess.PIPE)
+(stdout, stderr) = pipe.communicate()
+with open("%s/dmesg" % OUTDIR, "w") as fh:
+    fh.write(stdout)
+
+print("Results in the 'out' directory")
