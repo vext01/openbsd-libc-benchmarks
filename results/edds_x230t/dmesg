@@ -1,0 +1,127 @@
+OpenBSD 5.4-current (GENERIC.MP) #48: Thu Aug 29 11:22:15 MDT 2013
+    deraadt@amd64.openbsd.org:/usr/src/sys/arch/amd64/compile/GENERIC.MP
+real mem = 16844521472 (16064MB)
+avail mem = 16388030464 (15628MB)
+mainbus0 at root
+bios0 at mainbus0: SMBIOS rev. 2.7 @ 0xdae9d000 (68 entries)
+bios0: vendor LENOVO version "GCET92WW (2.52 )" date 02/25/2013
+bios0: LENOVO 3437CTO
+acpi0 at bios0: rev 2
+acpi0: sleep states S0 S3 S4 S5
+acpi0: tables DSDT FACP SLIC TCPA SSDT SSDT SSDT HPET APIC MCFG ECDT FPDT ASF! UEFI UEFI POAT SSDT SSDT UEFI DBG2
+acpi0: wakeup devices LID_(S4) SLPB(S3) IGBE(S4) EXP3(S4) XHCI(S3) EHC1(S3) EHC2(S3) HDEF(S4)
+acpitimer0 at acpi0: 3579545 Hz, 24 bits
+acpihpet0 at acpi0: 14318179 Hz
+acpimadt0 at acpi0 addr 0xfee00000: PC-AT compat
+cpu0 at mainbus0: apid 0 (boot processor)
+cpu0: Intel(R) Core(TM) i5-3320M CPU @ 2.60GHz, 2594.59 MHz
+cpu0: FPU,VME,DE,PSE,TSC,MSR,PAE,MCE,CX8,APIC,SEP,MTRR,PGE,MCA,CMOV,PAT,PSE36,CFLUSH,DS,ACPI,MMX,FXSR,SSE,SSE2,SS,HTT,TM,PBE,SSE3,PCLMUL,DTES64,MWAIT,DS-CPL,VMX,SMX,EST,TM2,SSSE3,CX16,xTPR,PDCM,PCID,SSE4.1,SSE4.2,x2APIC,POPCNT,DEADLINE,AES,XSAVE,AVX,F16C,RDRAND,NXE,LONG,LAHF,PERF,ITSC,FSGSBASE,SMEP,ERMS
+cpu0: 256KB 64b/line 8-way L2 cache
+cpu0: smt 0, core 0, package 0
+cpu0: apic clock running at 99MHz
+cpu1 at mainbus0: apid 1 (application processor)
+cpu1: Intel(R) Core(TM) i5-3320M CPU @ 2.60GHz, 2594.11 MHz
+cpu1: FPU,VME,DE,PSE,TSC,MSR,PAE,MCE,CX8,APIC,SEP,MTRR,PGE,MCA,CMOV,PAT,PSE36,CFLUSH,DS,ACPI,MMX,FXSR,SSE,SSE2,SS,HTT,TM,PBE,SSE3,PCLMUL,DTES64,MWAIT,DS-CPL,VMX,SMX,EST,TM2,SSSE3,CX16,xTPR,PDCM,PCID,SSE4.1,SSE4.2,x2APIC,POPCNT,DEADLINE,AES,XSAVE,AVX,F16C,RDRAND,NXE,LONG,LAHF,PERF,ITSC,FSGSBASE,SMEP,ERMS
+cpu1: 256KB 64b/line 8-way L2 cache
+cpu1: smt 1, core 0, package 0
+cpu2 at mainbus0: apid 2 (application processor)
+cpu2: Intel(R) Core(TM) i5-3320M CPU @ 2.60GHz, 2594.11 MHz
+cpu2: FPU,VME,DE,PSE,TSC,MSR,PAE,MCE,CX8,APIC,SEP,MTRR,PGE,MCA,CMOV,PAT,PSE36,CFLUSH,DS,ACPI,MMX,FXSR,SSE,SSE2,SS,HTT,TM,PBE,SSE3,PCLMUL,DTES64,MWAIT,DS-CPL,VMX,SMX,EST,TM2,SSSE3,CX16,xTPR,PDCM,PCID,SSE4.1,SSE4.2,x2APIC,POPCNT,DEADLINE,AES,XSAVE,AVX,F16C,RDRAND,NXE,LONG,LAHF,PERF,ITSC,FSGSBASE,SMEP,ERMS
+cpu2: 256KB 64b/line 8-way L2 cache
+cpu2: smt 0, core 1, package 0
+cpu3 at mainbus0: apid 3 (application processor)
+cpu3: Intel(R) Core(TM) i5-3320M CPU @ 2.60GHz, 2594.11 MHz
+cpu3: FPU,VME,DE,PSE,TSC,MSR,PAE,MCE,CX8,APIC,SEP,MTRR,PGE,MCA,CMOV,PAT,PSE36,CFLUSH,DS,ACPI,MMX,FXSR,SSE,SSE2,SS,HTT,TM,PBE,SSE3,PCLMUL,DTES64,MWAIT,DS-CPL,VMX,SMX,EST,TM2,SSSE3,CX16,xTPR,PDCM,PCID,SSE4.1,SSE4.2,x2APIC,POPCNT,DEADLINE,AES,XSAVE,AVX,F16C,RDRAND,NXE,LONG,LAHF,PERF,ITSC,FSGSBASE,SMEP,ERMS
+cpu3: 256KB 64b/line 8-way L2 cache
+cpu3: smt 1, core 1, package 0
+ioapic0 at mainbus0: apid 2 pa 0xfec00000, version 20, 24 pins
+acpimcfg0 at acpi0 addr 0xf8000000, bus 0-63
+acpiec0 at acpi0
+acpiprt0 at acpi0: bus 0 (PCI0)
+acpiprt1 at acpi0: bus -1 (PEG_)
+acpiprt2 at acpi0: bus 2 (EXP1)
+acpiprt3 at acpi0: bus 3 (EXP2)
+acpiprt4 at acpi0: bus 4 (EXP3)
+acpicpu0 at acpi0: C2, C1, PSS
+acpicpu1 at acpi0: C2, C1, PSS
+acpicpu2 at acpi0: C2, C1, PSS
+acpicpu3 at acpi0: C2, C1, PSS
+acpipwrres0 at acpi0: PUBS
+acpitz0 at acpi0: critical temperature is 103 degC
+acpibtn0 at acpi0: LID_
+acpibtn1 at acpi0: SLPB
+acpibat0 at acpi0: BAT0 model "45N1177" serial 12140 type LION oem "SANYO"
+acpibat1 at acpi0: BAT1 not present
+acpiac0 at acpi0: AC unit online
+acpithinkpad0 at acpi0
+acpidock0 at acpi0: GDCK not docked (0)
+cpu0: Enhanced SpeedStep 2594 MHz: speeds: 2601, 2600, 2500, 2400, 2300, 2200, 2100, 2000, 1900, 1800, 1700, 1600, 1500, 1400, 1300, 1200 MHz
+pci0 at mainbus0 bus 0
+pchb0 at pci0 dev 0 function 0 "Intel Core 3G Host" rev 0x09
+vga1 at pci0 dev 2 function 0 "Intel HD Graphics 4000" rev 0x09
+intagp0 at vga1
+agp0 at intagp0: aperture at 0xe0000000, size 0x10000000
+inteldrm0 at vga1
+drm0 at inteldrm0
+inteldrm0: 1366x768
+wsdisplay0 at vga1 mux 1: console (std, vt100 emulation)
+wsdisplay0: screen 1-5 added (std, vt100 emulation)
+"Intel 7 Series xHCI" rev 0x04 at pci0 dev 20 function 0 not configured
+"Intel 7 Series MEI" rev 0x04 at pci0 dev 22 function 0 not configured
+em0 at pci0 dev 25 function 0 "Intel 82579LM" rev 0x04: msi, address 3c:97:0e:a5:02:69
+ehci0 at pci0 dev 26 function 0 "Intel 7 Series USB" rev 0x04: apic 2 int 16
+usb0 at ehci0: USB revision 2.0
+uhub0 at usb0 "Intel EHCI root hub" rev 2.00/1.00 addr 1
+azalia0 at pci0 dev 27 function 0 "Intel 7 Series HD Audio" rev 0x04: msi
+azalia0: codecs: Realtek ALC269, Intel/0x2806, using Realtek ALC269
+audio0 at azalia0
+ppb0 at pci0 dev 28 function 0 "Intel 7 Series PCIE" rev 0xc4: msi
+pci1 at ppb0 bus 2
+sdhc0 at pci1 dev 0 function 0 "Ricoh 5U823 SD/MMC" rev 0x04: apic 2 int 16
+sdmmc0 at sdhc0
+ppb1 at pci0 dev 28 function 1 "Intel 7 Series PCIE" rev 0xc4: msi
+pci2 at ppb1 bus 3
+vendor "Intel", unknown product 0x0891 (class network subclass miscellaneous, rev 0xc4) at pci2 dev 0 function 0 not configured
+ppb2 at pci0 dev 28 function 2 "Intel 7 Series PCIE" rev 0xc4: msi
+pci3 at ppb2 bus 4
+ehci1 at pci0 dev 29 function 0 "Intel 7 Series USB" rev 0x04: apic 2 int 23
+usb1 at ehci1: USB revision 2.0
+uhub1 at usb1 "Intel EHCI root hub" rev 2.00/1.00 addr 1
+pcib0 at pci0 dev 31 function 0 "Intel QM77 LPC" rev 0x04
+ahci0 at pci0 dev 31 function 2 "Intel 7 Series AHCI" rev 0x04: msi, AHCI 1.3
+scsibus0 at ahci0: 32 targets
+sd0 at scsibus0 targ 0 lun 0: <ATA, Crucial_CT240M50, MU02> SCSI3 0/direct fixed naa.500a0751093c44b5
+sd0: 228936MB, 512 bytes/sector, 468862128 sectors, thin
+ichiic0 at pci0 dev 31 function 3 "Intel 7 Series SMBus" rev 0x04: apic 2 int 18
+iic0 at ichiic0
+spdmem0 at iic0 addr 0x50: 8GB DDR3 SDRAM PC3-12800 SO-DIMM
+spdmem1 at iic0 addr 0x51: 8GB DDR3 SDRAM PC3-12800 SO-DIMM
+isa0 at pcib0
+isadma0 at isa0
+pckbc0 at isa0 port 0x60/5
+pckbd0 at pckbc0 (kbd slot)
+pckbc0: using irq 1 for kbd slot
+wskbd0 at pckbd0: console keyboard, using wsdisplay0
+pms0 at pckbc0 (aux slot)
+pckbc0: using irq 12 for aux slot
+wsmouse0 at pms0 mux 0
+pcppi0 at isa0 port 0x61
+spkr0 at pcppi0
+mtrr: Pentium Pro MTRR support, 10 var ranges, 88 fixed ranges
+uhub2 at uhub0 port 1 "Intel Rate Matching Hub" rev 2.00/0.00 addr 2
+urtwn0 at uhub2 port 2 "Realtek 802.11n WLAN Adapter" rev 2.00/2.00 addr 3
+urtwn0: MAC/BB RTL8188CUS, RF 6052 1T1R, address 00:1f:1f:fe:c1:02
+uvideo0 at uhub2 port 6 configuration 1 interface 0 "Chicony Electronics Co., Ltd. Integrated Camera" rev 2.00/5.20 addr 4
+video0 at uvideo0
+uhub3 at uhub1 port 1 "Intel Rate Matching Hub" rev 2.00/0.00 addr 2
+uhidev0 at uhub3 port 5 configuration 1 interface 0 "Tablet ISD-V4" rev 1.10/6.11 addr 3
+uhidev0: iclass 3/1, 2 report ids
+ums0 at uhidev0 reportid 1: 2 buttons
+wsmouse1 at ums0 mux 0
+ums1 at uhidev0 reportid 2: 3 buttons, tip, barrel, eraser
+wsmouse2 at ums1 mux 0
+vscsi0 at root
+scsibus1 at vscsi0: 256 targets
+softraid0 at root
+scsibus2 at softraid0: 256 targets
+root on sd0a (3791f5f360451fbc.a) swap on sd0b dump on sd0b
