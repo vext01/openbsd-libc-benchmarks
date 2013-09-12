@@ -1,0 +1,418 @@
+OpenBSD 5.4 (GENERIC.MP) #30: Wed Jul 17 09:36:32 MDT 2013
+    deraadt@amd64.openbsd.org:/usr/src/sys/arch/amd64/compile/GENERIC.MP
+RTC BIOS diagnostic error 11<memory_size>
+real mem = 4106219520 (3915MB)
+avail mem = 3989184512 (3804MB)
+mainbus0 at root
+bios0 at mainbus0: SMBIOS rev. 2.5 @ 0xf0450 (82 entries)
+bios0: vendor Dell Inc. version "A03" date 04/29/2009
+bios0: Dell Inc. OptiPlex 760
+acpi0 at bios0: rev 2
+acpi0: sleep states S0 S1 S3 S4 S5
+acpi0: tables DSDT FACP SSDT APIC BOOT ASF! MCFG HPET ____ SLIC SSDT SSDT SSDT
+acpi0: wakeup devices VBTN(S4) PCI0(S5) PCI4(S5) PCI3(S5) PCI1(S5) PCI5(S5) PCI6(S5) MOU_(S3) USB0(S3) USB1(S3) USB2(S3) USB3(S3) USB4(S3) USB5(S3)
+acpitimer0 at acpi0: 3579545 Hz, 24 bits
+acpimadt0 at acpi0 addr 0xfee00000: PC-AT compat
+cpu0 at mainbus0: apid 0 (boot processor)
+cpu0: Intel(R) Core(TM)2 Duo CPU E8400 @ 3.00GHz, 2992.89 MHz
+cpu0: FPU,VME,DE,PSE,TSC,MSR,PAE,MCE,CX8,APIC,SEP,MTRR,PGE,MCA,CMOV,PAT,PSE36,CFLUSH,DS,ACPI,MMX,FXSR,SSE,SSE2,SS,HTT,TM,PBE,SSE3,DTES64,MWAIT,DS-CPL,VMX,SMX,EST,TM2,SSSE3,CX16,xTPR,PDCM,SSE4.1,XSAVE,NXE,LONG,LAHF,PERF
+cpu0: 6MB 64b/line 16-way L2 cache
+cpu0: smt 0, core 0, package 0
+cpu0: apic clock running at 332MHz
+cpu1 at mainbus0: apid 1 (application processor)
+cpu1: Intel(R) Core(TM)2 Duo CPU E8400 @ 3.00GHz, 2992.50 MHz
+cpu1: FPU,VME,DE,PSE,TSC,MSR,PAE,MCE,CX8,APIC,SEP,MTRR,PGE,MCA,CMOV,PAT,PSE36,CFLUSH,DS,ACPI,MMX,FXSR,SSE,SSE2,SS,HTT,TM,PBE,SSE3,DTES64,MWAIT,DS-CPL,VMX,SMX,EST,TM2,SSSE3,CX16,xTPR,PDCM,SSE4.1,XSAVE,NXE,LONG,LAHF,PERF
+cpu1: 6MB 64b/line 16-way L2 cache
+cpu1: smt 0, core 1, package 0
+ioapic0 at mainbus0: apid 8 pa 0xfec00000, version 20, 24 pins
+ioapic0: misconfigured as apic 0, remapped to apid 8
+acpimcfg0 at acpi0 addr 0xe0000000, bus 0-255
+acpihpet0 at acpi0: 14318179 Hz
+acpiprt0 at acpi0: bus 3 (PCI4)
+acpiprt1 at acpi0: bus 1 (PCI2)
+acpiprt2 at acpi0: bus 2 (PCI3)
+acpiprt3 at acpi0: bus -1 (PCI1)
+acpiprt4 at acpi0: bus -1 (PCI5)
+acpiprt5 at acpi0: bus -1 (PCI6)
+acpiprt6 at acpi0: bus 0 (PCI0)
+acpicpu0 at acpi0: C1, PSS
+acpicpu1 at acpi0: C1, PSS
+acpibtn0 at acpi0: VBTN
+cpu0: Enhanced SpeedStep 2992 MHz: speeds: 3000, 2667, 2333, 2000 MHz
+pci0 at mainbus0 bus 0
+pchb0 at pci0 dev 0 function 0 "Intel Q45 Host" rev 0x03
+vga1 at pci0 dev 2 function 0 "Intel Q45 Video" rev 0x03
+intagp0 at vga1
+agp0 at intagp0: aperture at 0xd0000000, size 0x10000000
+inteldrm0 at vga1
+drm0 at inteldrm0
+inteldrm0: Setting output timings on SDVOB failed
+inteldrm0: 1280x1024
+wsdisplay0 at vga1 mux 1: console (std, vt100 emulation)
+wsdisplay0: screen 1-5 added (std, vt100 emulation)
+"Intel Q45 Video" rev 0x03 at pci0 dev 2 function 1 not configured
+"Intel Q45 HECI" rev 0x03 at pci0 dev 3 function 0 not configured
+pciide0 at pci0 dev 3 function 2 "Intel Q45 PT IDER" rev 0x03: DMA (unsupported), channel 0 wired to native-PCI, channel 1 wired to native-PCI
+pciide0: using apic 8 int 18 for native-PCI interrupt
+pciide0: channel 0 ignored (not responding; disabled or no drives?)
+pciide0: channel 1 ignored (not responding; disabled or no drives?)
+"Intel Q45 KT" rev 0x03 at pci0 dev 3 function 3 not configured
+em0 at pci0 dev 25 function 0 "Intel ICH10 D BM LM" rev 0x02: msi, address 00:23:ae:a4:86:04
+uhci0 at pci0 dev 26 function 0 "Intel 82801JD USB" rev 0x02: apic 8 int 16
+uhci1 at pci0 dev 26 function 1 "Intel 82801JD USB" rev 0x02: apic 8 int 17
+uhci2 at pci0 dev 26 function 2 "Intel 82801JD USB" rev 0x02: apic 8 int 22
+ehci0 at pci0 dev 26 function 7 "Intel 82801JD USB" rev 0x02: apic 8 int 22
+usb0 at ehci0: USB revision 2.0
+uhub0 at usb0 "Intel EHCI root hub" rev 2.00/1.00 addr 1
+azalia0 at pci0 dev 27 function 0 "Intel 82801JD HD Audio" rev 0x02: msi
+azalia0: codecs: Analog Devices AD1984A
+audio0 at azalia0
+ppb0 at pci0 dev 28 function 0 "Intel 82801JD PCIE" rev 0x02: msi
+pci1 at ppb0 bus 1
+ppb1 at pci0 dev 28 function 1 "Intel 82801JD PCIE" rev 0x02: msi
+pci2 at ppb1 bus 2
+uhci3 at pci0 dev 29 function 0 "Intel 82801JD USB" rev 0x02: apic 8 int 23
+uhci4 at pci0 dev 29 function 1 "Intel 82801JD USB" rev 0x02: apic 8 int 17
+uhci5 at pci0 dev 29 function 2 "Intel 82801JD USB" rev 0x02: apic 8 int 18
+ehci1 at pci0 dev 29 function 7 "Intel 82801JD USB" rev 0x02: apic 8 int 23
+usb1 at ehci1: USB revision 2.0
+uhub1 at usb1 "Intel EHCI root hub" rev 2.00/1.00 addr 1
+ppb2 at pci0 dev 30 function 0 "Intel 82801BA Hub-to-PCI" rev 0xa2
+pci3 at ppb2 bus 3
+pcib0 at pci0 dev 31 function 0 "Intel 82801JD LPC" rev 0x02
+pciide1 at pci0 dev 31 function 2 "Intel 82801JD SATA" rev 0x02: DMA, channel 0 configured to native-PCI, channel 1 configured to native-PCI
+pciide1: using apic 8 int 18 for native-PCI interrupt
+wd0 at pciide1 channel 0 drive 0: <SAMSUNG HD161GJ>
+wd0: 16-sector PIO, LBA48, 152587MB, 312500000 sectors
+wd0(pciide1:0:0): using PIO mode 4, Ultra-DMA mode 6
+atapiscsi0 at pciide1 channel 1 drive 0
+scsibus0 at atapiscsi0: 2 targets
+cd0 at scsibus0 targ 0 lun 0: <TSSTcorp, DVD+-RW TS-H653G, DW10> ATAPI 5/cdrom removable
+cd0(pciide1:1:0): using PIO mode 4, Ultra-DMA mode 5
+ichiic0 at pci0 dev 31 function 3 "Intel 82801JD SMBus" rev 0x02: apic 8 int 18
+iic0 at ichiic0
+spdmem0 at iic0 addr 0x50: 2GB DDR2 SDRAM non-parity PC2-6400CL5
+spdmem1 at iic0 addr 0x52: 2GB DDR2 SDRAM non-parity PC2-6400CL5
+pciide2 at pci0 dev 31 function 5 "Intel 82801JD SATA" rev 0x02: DMA, channel 0 wired to native-PCI, channel 1 wired to native-PCI
+pciide2: using apic 8 int 18 for native-PCI interrupt
+usb2 at uhci0: USB revision 1.0
+uhub2 at usb2 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+usb3 at uhci1: USB revision 1.0
+uhub3 at usb3 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+usb4 at uhci2: USB revision 1.0
+uhub4 at usb4 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+usb5 at uhci3: USB revision 1.0
+uhub5 at usb5 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+usb6 at uhci4: USB revision 1.0
+uhub6 at usb6 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+usb7 at uhci5: USB revision 1.0
+uhub7 at usb7 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+isa0 at pcib0
+isadma0 at isa0
+com0 at isa0 port 0x3f8/8 irq 4: ns16550a, 16 byte fifo
+pckbc0 at isa0 port 0x60/5
+pckbd0 at pckbc0 (kbd slot)
+pckbc0: using irq 1 for kbd slot
+wskbd0 at pckbd0: console keyboard, using wsdisplay0
+pcppi0 at isa0 port 0x61
+spkr0 at pcppi0
+lpt0 at isa0 port 0x378/4 irq 7
+fdc0 at isa0 port 0x3f0/6 irq 6 drq 2
+fd0 at fdc0 drive 0: 1.44MB 80 cyl, 2 head, 18 sec
+mtrr: Pentium Pro MTRR support
+uhub8 at uhub2 port 2 "Dell Dell Multimedia Pro Keyboard Hub" rev 1.10/59.00 addr 2
+uhidev0 at uhub8 port 1 configuration 1 interface 0 "Dell Dell Multimedia Pro Keyboard" rev 1.10/59.00 addr 3
+uhidev0: iclass 3/1
+ukbd0 at uhidev0: 8 variable keys, 6 key codes
+wskbd1 at ukbd0 mux 1
+wskbd1: connecting to wsdisplay0
+uhidev1 at uhub8 port 1 configuration 1 interface 1 "Dell Dell Multimedia Pro Keyboard" rev 1.10/59.00 addr 3
+uhidev1: iclass 3/0, 3 report ids
+uhid0 at uhidev1 reportid 1: input=1, output=0, feature=0
+uhid1 at uhidev1 reportid 2: input=1, output=0, feature=0
+uhid2 at uhidev1 reportid 3: input=3, output=0, feature=0
+uhidev2 at uhub5 port 1 configuration 1 interface 0 "Dell Dell USB Optical Mouse" rev 2.00/43.01 addr 2
+uhidev2: iclass 3/1
+ums0 at uhidev2: 3 buttons, Z dir
+wsmouse0 at ums0 mux 0
+uaudio0 at uhub7 port 1 configuration 1 interface 0 "Microsoft Microsoft LifeChat LX-3000" rev 1.10/1.00 addr 2
+uaudio0: audio rev 1.00, 8 mixer controls
+audio1 at uaudio0
+uhidev3 at uhub7 port 1 configuration 1 interface 3 "Microsoft Microsoft LifeChat LX-3000" rev 1.10/1.00 addr 2
+uhidev3: iclass 3/0
+uhid3 at uhidev3: input=4, output=4, feature=0
+vscsi0 at root
+scsibus1 at vscsi0: 256 targets
+softraid0 at root
+scsibus2 at softraid0: 256 targets
+root on wd0a (3aac5eaa9291f339.a) swap on wd0b dump on wd0b
+inteldrm0: Setting output timings on SDVOB failed
+inteldrm0: Setting output timings on SDVOB failed
+inteldrm0: Setting output timings on SDVOB failed
+syncing disks... done
+rebooting...
+OpenBSD 5.4-current (RAMDISK_CD) #47: Tue Sep 10 17:37:51 MDT 2013
+    deraadt@amd64.openbsd.org:/usr/src/sys/arch/amd64/compile/RAMDISK_CD
+RTC BIOS diagnostic error 11<memory_size>
+real mem = 4106219520 (3915MB)
+avail mem = 3991994368 (3807MB)
+mainbus0 at root
+bios0 at mainbus0: SMBIOS rev. 2.5 @ 0xf0450 (82 entries)
+bios0: vendor Dell Inc. version "A03" date 04/29/2009
+bios0: Dell Inc. OptiPlex 760
+acpi0 at bios0: rev 2
+acpi0: sleep states S0 S1 S3 S4 S5
+acpi0: tables DSDT FACP SSDT APIC BOOT ASF! MCFG HPET ____ SLIC SSDT SSDT SSDT
+acpimadt0 at acpi0 addr 0xfee00000: PC-AT compat
+cpu0 at mainbus0: apid 0 (boot processor)
+cpu0: Intel(R) Core(TM)2 Duo CPU E8400 @ 3.00GHz, 2992.87 MHz
+cpu0: FPU,VME,DE,PSE,TSC,MSR,PAE,MCE,CX8,APIC,SEP,MTRR,PGE,MCA,CMOV,PAT,PSE36,CFLUSH,DS,ACPI,MMX,FXSR,SSE,SSE2,SS,HTT,TM,PBE,SSE3,DTES64,MWAIT,DS-CPL,VMX,SMX,EST,TM2,SSSE3,CX16,xTPR,PDCM,SSE4.1,XSAVE,NXE,LONG,LAHF,PERF
+cpu0: 6MB 64b/line 16-way L2 cache
+cpu0: apic clock running at 332MHz
+cpu at mainbus0: not configured
+ioapic0 at mainbus0: apid 8 pa 0xfec00000, version 20, 24 pins
+ioapic0: misconfigured as apic 0, remapped to apid 8
+acpiprt0 at acpi0: bus 3 (PCI4)
+acpiprt1 at acpi0: bus 1 (PCI2)
+acpiprt2 at acpi0: bus 2 (PCI3)
+acpiprt3 at acpi0: bus -1 (PCI1)
+acpiprt4 at acpi0: bus -1 (PCI5)
+acpiprt5 at acpi0: bus -1 (PCI6)
+acpiprt6 at acpi0: bus 0 (PCI0)
+pci0 at mainbus0 bus 0
+pchb0 at pci0 dev 0 function 0 "Intel Q45 Host" rev 0x03
+vga1 at pci0 dev 2 function 0 "Intel Q45 Video" rev 0x03
+wsdisplay0 at vga1 mux 1: console (80x25, vt100 emulation)
+"Intel Q45 Video" rev 0x03 at pci0 dev 2 function 1 not configured
+"Intel Q45 HECI" rev 0x03 at pci0 dev 3 function 0 not configured
+pciide0 at pci0 dev 3 function 2 "Intel Q45 PT IDER" rev 0x03: DMA (unsupported), channel 0 wired to native-PCI, channel 1 wired to native-PCI
+pciide0: using apic 8 int 18 for native-PCI interrupt
+pciide0: channel 0 ignored (not responding; disabled or no drives?)
+pciide0: channel 1 ignored (not responding; disabled or no drives?)
+"Intel Q45 KT" rev 0x03 at pci0 dev 3 function 3 not configured
+em0 at pci0 dev 25 function 0 "Intel ICH10 D BM LM" rev 0x02: msi, address 00:23:ae:a4:86:04
+uhci0 at pci0 dev 26 function 0 "Intel 82801JD USB" rev 0x02: apic 8 int 16
+uhci1 at pci0 dev 26 function 1 "Intel 82801JD USB" rev 0x02: apic 8 int 17
+uhci2 at pci0 dev 26 function 2 "Intel 82801JD USB" rev 0x02: apic 8 int 22
+ehci0 at pci0 dev 26 function 7 "Intel 82801JD USB" rev 0x02: apic 8 int 22
+usb0 at ehci0: USB revision 2.0
+uhub0 at usb0 "Intel EHCI root hub" rev 2.00/1.00 addr 1
+"Intel 82801JD HD Audio" rev 0x02 at pci0 dev 27 function 0 not configured
+ppb0 at pci0 dev 28 function 0 "Intel 82801JD PCIE" rev 0x02: msi
+pci1 at ppb0 bus 1
+ppb1 at pci0 dev 28 function 1 "Intel 82801JD PCIE" rev 0x02: msi
+pci2 at ppb1 bus 2
+uhci3 at pci0 dev 29 function 0 "Intel 82801JD USB" rev 0x02: apic 8 int 23
+uhci4 at pci0 dev 29 function 1 "Intel 82801JD USB" rev 0x02: apic 8 int 17
+uhci5 at pci0 dev 29 function 2 "Intel 82801JD USB" rev 0x02: apic 8 int 18
+ehci1 at pci0 dev 29 function 7 "Intel 82801JD USB" rev 0x02: apic 8 int 23
+usb1 at ehci1: USB revision 2.0
+uhub1 at usb1 "Intel EHCI root hub" rev 2.00/1.00 addr 1
+ppb2 at pci0 dev 30 function 0 "Intel 82801BA Hub-to-PCI" rev 0xa2
+pci3 at ppb2 bus 3
+"Intel 82801JD LPC" rev 0x02 at pci0 dev 31 function 0 not configured
+pciide1 at pci0 dev 31 function 2 "Intel 82801JD SATA" rev 0x02: DMA, channel 0 configured to native-PCI, channel 1 configured to native-PCI
+pciide1: using apic 8 int 18 for native-PCI interrupt
+wd0 at pciide1 channel 0 drive 0: <SAMSUNG HD161GJ>
+wd0: 16-sector PIO, LBA48, 152587MB, 312500000 sectors
+wd0(pciide1:0:0): using PIO mode 4, Ultra-DMA mode 6
+atapiscsi0 at pciide1 channel 1 drive 0
+scsibus0 at atapiscsi0: 2 targets
+cd0 at scsibus0 targ 0 lun 0: <TSSTcorp, DVD+-RW TS-H653G, DW10> ATAPI 5/cdrom removable
+cd0(pciide1:1:0): using PIO mode 4, Ultra-DMA mode 5
+"Intel 82801JD SMBus" rev 0x02 at pci0 dev 31 function 3 not configured
+pciide2 at pci0 dev 31 function 5 "Intel 82801JD SATA" rev 0x02: DMA, channel 0 wired to native-PCI, channel 1 wired to native-PCI
+pciide2: using apic 8 int 18 for native-PCI interrupt
+usb2 at uhci0: USB revision 1.0
+uhub2 at usb2 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+usb3 at uhci1: USB revision 1.0
+uhub3 at usb3 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+usb4 at uhci2: USB revision 1.0
+uhub4 at usb4 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+usb5 at uhci3: USB revision 1.0
+uhub5 at usb5 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+usb6 at uhci4: USB revision 1.0
+uhub6 at usb6 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+usb7 at uhci5: USB revision 1.0
+uhub7 at usb7 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+isa0 at mainbus0
+com0 at isa0 port 0x3f8/8 irq 4: ns16550a, 16 byte fifo
+pckbc0 at isa0 port 0x60/5
+pckbd0 at pckbc0 (kbd slot)
+pckbc0: using irq 1 for kbd slot
+wskbd0 at pckbd0: console keyboard, using wsdisplay0
+uhub8 at uhub2 port 2 "Dell Dell Multimedia Pro Keyboard Hub" rev 1.10/59.00 addr 2
+uhidev0 at uhub8 port 1 configuration 1 interface 0 "Dell Dell Multimedia Pro Keyboard" rev 1.10/59.00 addr 3
+uhidev0: iclass 3/1
+ukbd0 at uhidev0
+wskbd1 at ukbd0 mux 1
+wskbd1: connecting to wsdisplay0
+uhidev1 at uhub8 port 1 configuration 1 interface 1 "Dell Dell Multimedia Pro Keyboard" rev 1.10/59.00 addr 3
+uhidev1: iclass 3/0, 3 report ids
+uhid at uhidev1 reportid 1 not configured
+uhid at uhidev1 reportid 2 not configured
+uhid at uhidev1 reportid 3 not configured
+uhidev2 at uhub5 port 1 configuration 1 interface 0 "Dell Dell USB Optical Mouse" rev 2.00/43.01 addr 2
+uhidev2: iclass 3/1
+uhid at uhidev2 not configured
+uhidev3 at uhub7 port 1 configuration 1 interface 3 "vendor 0x045e Microsoft LifeChat LX-3000" rev 1.10/1.00 addr 2
+uhidev3: iclass 3/0
+uhid at uhidev3 not configured
+"vendor 0x045e Microsoft LifeChat LX-3000" rev 1.10/1.00 addr 2 at uhub7 port 1 configuration 1 not configured
+softraid0 at root
+scsibus1 at softraid0: 256 targets
+root on rd0a swap on rd0b dump on rd0b
+syncing disks... 
+OpenBSD 5.4-current (GENERIC.MP) #54: Tue Sep 10 17:21:35 MDT 2013
+    deraadt@amd64.openbsd.org:/usr/src/sys/arch/amd64/compile/GENERIC.MP
+RTC BIOS diagnostic error 11<memory_size>
+real mem = 4106219520 (3915MB)
+avail mem = 3988807680 (3804MB)
+mainbus0 at root
+bios0 at mainbus0: SMBIOS rev. 2.5 @ 0xf0450 (82 entries)
+bios0: vendor Dell Inc. version "A03" date 04/29/2009
+bios0: Dell Inc. OptiPlex 760
+acpi0 at bios0: rev 2
+acpi0: sleep states S0 S1 S3 S4 S5
+acpi0: tables DSDT FACP SSDT APIC BOOT ASF! MCFG HPET ____ SLIC SSDT SSDT SSDT
+acpi0: wakeup devices VBTN(S4) PCI0(S5) PCI4(S5) PCI3(S5) PCI1(S5) PCI5(S5) PCI6(S5) MOU_(S3) USB0(S3) USB1(S3) USB2(S3) USB3(S3) USB4(S3) USB5(S3)
+acpitimer0 at acpi0: 3579545 Hz, 24 bits
+acpimadt0 at acpi0 addr 0xfee00000: PC-AT compat
+cpu0 at mainbus0: apid 0 (boot processor)
+cpu0: Intel(R) Core(TM)2 Duo CPU E8400 @ 3.00GHz, 3004.58 MHz
+cpu0: FPU,VME,DE,PSE,TSC,MSR,PAE,MCE,CX8,APIC,SEP,MTRR,PGE,MCA,CMOV,PAT,PSE36,CFLUSH,DS,ACPI,MMX,FXSR,SSE,SSE2,SS,HTT,TM,PBE,SSE3,DTES64,MWAIT,DS-CPL,VMX,SMX,EST,TM2,SSSE3,CX16,xTPR,PDCM,SSE4.1,XSAVE,NXE,LONG,LAHF,PERF
+cpu0: 6MB 64b/line 16-way L2 cache
+cpu0: smt 0, core 0, package 0
+cpu0: apic clock running at 332MHz
+cpu1 at mainbus0: apid 1 (application processor)
+cpu1: Intel(R) Core(TM)2 Duo CPU E8400 @ 3.00GHz, 2992.51 MHz
+cpu1: FPU,VME,DE,PSE,TSC,MSR,PAE,MCE,CX8,APIC,SEP,MTRR,PGE,MCA,CMOV,PAT,PSE36,CFLUSH,DS,ACPI,MMX,FXSR,SSE,SSE2,SS,HTT,TM,PBE,SSE3,DTES64,MWAIT,DS-CPL,VMX,SMX,EST,TM2,SSSE3,CX16,xTPR,PDCM,SSE4.1,XSAVE,NXE,LONG,LAHF,PERF
+cpu1: 6MB 64b/line 16-way L2 cache
+cpu1: smt 0, core 1, package 0
+ioapic0 at mainbus0: apid 8 pa 0xfec00000, version 20, 24 pins
+ioapic0: misconfigured as apic 0, remapped to apid 8
+acpimcfg0 at acpi0 addr 0xe0000000, bus 0-255
+acpihpet0 at acpi0: 14318179 Hz
+acpiprt0 at acpi0: bus 3 (PCI4)
+acpiprt1 at acpi0: bus 1 (PCI2)
+acpiprt2 at acpi0: bus 2 (PCI3)
+acpiprt3 at acpi0: bus -1 (PCI1)
+acpiprt4 at acpi0: bus -1 (PCI5)
+acpiprt5 at acpi0: bus -1 (PCI6)
+acpiprt6 at acpi0: bus 0 (PCI0)
+acpicpu0 at acpi0: C1, PSS
+acpicpu1 at acpi0: C1, PSS
+acpibtn0 at acpi0: VBTN
+cpu0: Enhanced SpeedStep 3004 MHz: speeds: 3000, 2667, 2333, 2000 MHz
+pci0 at mainbus0 bus 0
+pchb0 at pci0 dev 0 function 0 "Intel Q45 Host" rev 0x03
+vga1 at pci0 dev 2 function 0 "Intel Q45 Video" rev 0x03
+intagp0 at vga1
+agp0 at intagp0: aperture at 0xd0000000, size 0x10000000
+inteldrm0 at vga1
+drm0 at inteldrm0
+drm: Setting output timings on SDVOB failed
+inteldrm0: 1280x1024
+wsdisplay0 at vga1 mux 1: console (std, vt100 emulation)
+wsdisplay0: screen 1-5 added (std, vt100 emulation)
+"Intel Q45 Video" rev 0x03 at pci0 dev 2 function 1 not configured
+"Intel Q45 HECI" rev 0x03 at pci0 dev 3 function 0 not configured
+pciide0 at pci0 dev 3 function 2 "Intel Q45 PT IDER" rev 0x03: DMA (unsupported), channel 0 wired to native-PCI, channel 1 wired to native-PCI
+pciide0: using apic 8 int 18 for native-PCI interrupt
+pciide0: channel 0 ignored (not responding; disabled or no drives?)
+pciide0: channel 1 ignored (not responding; disabled or no drives?)
+"Intel Q45 KT" rev 0x03 at pci0 dev 3 function 3 not configured
+em0 at pci0 dev 25 function 0 "Intel ICH10 D BM LM" rev 0x02: msi, address 00:23:ae:a4:86:04
+uhci0 at pci0 dev 26 function 0 "Intel 82801JD USB" rev 0x02: apic 8 int 16
+uhci1 at pci0 dev 26 function 1 "Intel 82801JD USB" rev 0x02: apic 8 int 17
+uhci2 at pci0 dev 26 function 2 "Intel 82801JD USB" rev 0x02: apic 8 int 22
+ehci0 at pci0 dev 26 function 7 "Intel 82801JD USB" rev 0x02: apic 8 int 22
+usb0 at ehci0: USB revision 2.0
+uhub0 at usb0 "Intel EHCI root hub" rev 2.00/1.00 addr 1
+azalia0 at pci0 dev 27 function 0 "Intel 82801JD HD Audio" rev 0x02: msi
+azalia0: codecs: Analog Devices AD1984A
+audio0 at azalia0
+ppb0 at pci0 dev 28 function 0 "Intel 82801JD PCIE" rev 0x02: msi
+pci1 at ppb0 bus 1
+ppb1 at pci0 dev 28 function 1 "Intel 82801JD PCIE" rev 0x02: msi
+pci2 at ppb1 bus 2
+uhci3 at pci0 dev 29 function 0 "Intel 82801JD USB" rev 0x02: apic 8 int 23
+uhci4 at pci0 dev 29 function 1 "Intel 82801JD USB" rev 0x02: apic 8 int 17
+uhci5 at pci0 dev 29 function 2 "Intel 82801JD USB" rev 0x02: apic 8 int 18
+ehci1 at pci0 dev 29 function 7 "Intel 82801JD USB" rev 0x02: apic 8 int 23
+usb1 at ehci1: USB revision 2.0
+uhub1 at usb1 "Intel EHCI root hub" rev 2.00/1.00 addr 1
+ppb2 at pci0 dev 30 function 0 "Intel 82801BA Hub-to-PCI" rev 0xa2
+pci3 at ppb2 bus 3
+pcib0 at pci0 dev 31 function 0 "Intel 82801JD LPC" rev 0x02
+pciide1 at pci0 dev 31 function 2 "Intel 82801JD SATA" rev 0x02: DMA, channel 0 configured to native-PCI, channel 1 configured to native-PCI
+pciide1: using apic 8 int 18 for native-PCI interrupt
+wd0 at pciide1 channel 0 drive 0: <SAMSUNG HD161GJ>
+wd0: 16-sector PIO, LBA48, 152587MB, 312500000 sectors
+wd0(pciide1:0:0): using PIO mode 4, Ultra-DMA mode 6
+atapiscsi0 at pciide1 channel 1 drive 0
+scsibus0 at atapiscsi0: 2 targets
+cd0 at scsibus0 targ 0 lun 0: <TSSTcorp, DVD+-RW TS-H653G, DW10> ATAPI 5/cdrom removable
+cd0(pciide1:1:0): using PIO mode 4, Ultra-DMA mode 5
+ichiic0 at pci0 dev 31 function 3 "Intel 82801JD SMBus" rev 0x02: apic 8 int 18
+iic0 at ichiic0
+spdmem0 at iic0 addr 0x50: 2GB DDR2 SDRAM non-parity PC2-6400CL5
+spdmem1 at iic0 addr 0x52: 2GB DDR2 SDRAM non-parity PC2-6400CL5
+pciide2 at pci0 dev 31 function 5 "Intel 82801JD SATA" rev 0x02: DMA, channel 0 wired to native-PCI, channel 1 wired to native-PCI
+pciide2: using apic 8 int 18 for native-PCI interrupt
+usb2 at uhci0: USB revision 1.0
+uhub2 at usb2 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+usb3 at uhci1: USB revision 1.0
+uhub3 at usb3 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+usb4 at uhci2: USB revision 1.0
+uhub4 at usb4 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+usb5 at uhci3: USB revision 1.0
+uhub5 at usb5 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+usb6 at uhci4: USB revision 1.0
+uhub6 at usb6 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+usb7 at uhci5: USB revision 1.0
+uhub7 at usb7 "Intel UHCI root hub" rev 1.00/1.00 addr 1
+isa0 at pcib0
+isadma0 at isa0
+com0 at isa0 port 0x3f8/8 irq 4: ns16550a, 16 byte fifo
+pckbc0 at isa0 port 0x60/5
+pckbd0 at pckbc0 (kbd slot)
+pckbc0: using irq 1 for kbd slot
+wskbd0 at pckbd0: console keyboard, using wsdisplay0
+pcppi0 at isa0 port 0x61
+spkr0 at pcppi0
+lpt0 at isa0 port 0x378/4 irq 7
+fdc0 at isa0 port 0x3f0/6 irq 6 drq 2
+fd0 at fdc0 drive 0: 1.44MB 80 cyl, 2 head, 18 sec
+mtrr: Pentium Pro MTRR support, 7 var ranges, 88 fixed ranges
+uhub8 at uhub2 port 2 "Dell Dell Multimedia Pro Keyboard Hub" rev 1.10/59.00 addr 2
+uhidev0 at uhub8 port 1 configuration 1 interface 0 "Dell Dell Multimedia Pro Keyboard" rev 1.10/59.00 addr 3
+uhidev0: iclass 3/1
+ukbd0 at uhidev0: 8 variable keys, 6 key codes
+wskbd1 at ukbd0 mux 1
+wskbd1: connecting to wsdisplay0
+uhidev1 at uhub8 port 1 configuration 1 interface 1 "Dell Dell Multimedia Pro Keyboard" rev 1.10/59.00 addr 3
+uhidev1: iclass 3/0, 3 report ids
+uhid0 at uhidev1 reportid 1: input=1, output=0, feature=0
+uhid1 at uhidev1 reportid 2: input=1, output=0, feature=0
+uhid2 at uhidev1 reportid 3: input=3, output=0, feature=0
+uhidev2 at uhub5 port 1 configuration 1 interface 0 "Dell Dell USB Optical Mouse" rev 2.00/43.01 addr 2
+uhidev2: iclass 3/1
+ums0 at uhidev2: 3 buttons, Z dir
+wsmouse0 at ums0 mux 0
+uaudio0 at uhub7 port 1 configuration 1 interface 0 "Microsoft Microsoft LifeChat LX-3000" rev 1.10/1.00 addr 2
+uaudio0: audio rev 1.00, 8 mixer controls
+audio1 at uaudio0
+uhidev3 at uhub7 port 1 configuration 1 interface 3 "Microsoft Microsoft LifeChat LX-3000" rev 1.10/1.00 addr 2
+uhidev3: iclass 3/0
+uhid3 at uhidev3: input=4, output=4, feature=0
+vscsi0 at root
+scsibus1 at vscsi0: 256 targets
+softraid0 at root
+scsibus2 at softraid0: 256 targets
+root on wd0a (3aac5eaa9291f339.a) swap on wd0b dump on wd0b
+drm: Setting output timings on SDVOB failed
+drm: Setting output timings on SDVOB failed
+drm: Setting output timings on SDVOB failed
+drm: Setting output timings on SDVOB failed
+drm: Setting output timings on SDVOB failed
